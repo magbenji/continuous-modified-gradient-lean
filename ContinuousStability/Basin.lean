@@ -17,8 +17,12 @@ H1 and H2 at `x̄` follow from these, so they are not listed separately.
 We then prove that `O_{c,x̄}` is open (`isOpen_Oc`), define `E_{c,x̄}` as its connected component
 containing `x̄` (`Ec`), and deduce the paper's statement for `E_{c,x̄}` itself (`basin_Ec`).
 -/
-import ContinuousStability.Stability
-import Mathlib.Topology.Algebra.Module.LocallyConvex
+module
+
+public import ContinuousStability.Stability
+public import Mathlib.Topology.Algebra.Module.LocallyConvex
+
+@[expose] public section
 
 open scoped RealInnerProductSpace Topology
 open Set Metric Filter

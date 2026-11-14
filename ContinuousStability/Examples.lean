@@ -14,11 +14,15 @@ Copyright (c) 2026 B. J. Ridenhour. Released under Apache 2.0 license as describ
   so the constant solution `x(t) ≡ y` never approaches `x̄`. We prove this mechanism in general
   (`not_asympStable_of_crit_accum`); the spline itself is not formalized.
 -/
-import ContinuousStability.Stability
-import Mathlib.Analysis.Calculus.Deriv.Inv
-import Mathlib.Analysis.InnerProductSpace.Calculus
-import Mathlib.Analysis.InnerProductSpace.PiL2
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+module
+
+public import ContinuousStability.Stability
+public import Mathlib.Analysis.Calculus.Deriv.Inv
+public import Mathlib.Analysis.InnerProductSpace.Calculus
+public import Mathlib.Analysis.InnerProductSpace.PiL2
+public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+
+@[expose] public section
 
 open scoped RealInnerProductSpace Topology
 open Set Metric Filter

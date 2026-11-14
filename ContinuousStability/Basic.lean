@@ -17,10 +17,14 @@ A solution of the modified-gradient system (E), `x' = P(t) ∇f(x)`, on a time i
 Mathlib's `IsIntegralCurveOn x (fun t z => P t (g z)) I`: for every `t ∈ I`,
 `HasDerivWithinAt x (P t (g (x t))) I t`.
 -/
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
-import Mathlib.Analysis.InnerProductSpace.LinearMap
-import Mathlib.Analysis.Normed.Module.FiniteDimension
-import Mathlib.Analysis.ODE.Basic
+module
+
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+public import Mathlib.Analysis.InnerProductSpace.LinearMap
+public import Mathlib.Analysis.Normed.Module.FiniteDimension
+public import Mathlib.Analysis.ODE.Basic
+
+@[expose] public section
 
 open scoped RealInnerProductSpace
 open Set

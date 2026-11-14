@@ -8,7 +8,12 @@ The paper uses `V(x) = M - f(x)` with `M = f(x̄)` and the trajectory derivative
 `(f ∘ x)'(t) = ⟪∇f(x(t)), P(t) ∇f(x(t))⟫ ≥ 0`, and `V` is nonincreasing exactly when `f ∘ x`
 is nondecreasing.
 -/
-import ContinuousStability.Basic
+module
+
+public import ContinuousStability.Basic
+public import Mathlib.Analysis.Calculus.Deriv.Comp
+
+@[expose] public section
 
 open scoped RealInnerProductSpace
 open Set

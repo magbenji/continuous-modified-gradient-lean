@@ -3,8 +3,12 @@ Copyright (c) 2026 B. J. Ridenhour. Released under Apache 2.0 license as describ
 
 # Stability and asymptotic stability (Section 2): Theorem 2.1
 -/
-import ContinuousStability.Lyapunov
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+module
+
+public import ContinuousStability.Lyapunov
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+
+@[expose] public section
 
 open scoped RealInnerProductSpace Topology
 open Set Metric Filter
