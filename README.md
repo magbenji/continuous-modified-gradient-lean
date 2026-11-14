@@ -1,6 +1,7 @@
 # Lean 4 formalization: continuous-time modified-gradient stability
 
 [![DOI](https://img.shields.io/badge/DOI-10.1080%2F17513758.2017.1400598-blue.svg)](https://doi.org/10.1080/17513758.2017.1400598)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24232214.svg)](https://doi.org/10.5281/zenodo.24232214)
 [![Lean build](https://github.com/magbenji/continuous-modified-gradient-lean/actions/workflows/lean_action_ci.yml/badge.svg)](https://github.com/magbenji/continuous-modified-gradient-lean/actions/workflows/lean_action_ci.yml)
 
 Machine-checked proofs (Lean 4 + Mathlib) of the results of the paper
@@ -160,6 +161,8 @@ If you use this code, please cite the paper (see `CITATION.cff`):
 > B. J. Ridenhour and J. R. Ridenhour, Stability of equilibria in quantitative genetic models
 > based on modified-gradient systems, Journal of Biological Dynamics 12(1) (2018), 39–50.
 > https://doi.org/10.1080/17513758.2017.1400598
+
+To cite the code itself, use the Zenodo archive: https://doi.org/10.5281/zenodo.24232214.
 
 The code is released under the
 Apache License 2.0 (see `LICENSE`), the same license as Mathlib.
