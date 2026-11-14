@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite the accompanying paper."
+title: "Lean 4 formalization: stability of equilibria in quantitative genetic models based on modified-gradient systems"
+authors:
+  - family-names: Ridenhour
+    given-names: B. J.
+    affiliation: University of Idaho
+license: Apache-2.0
+repository-code: "https://github.com/magbenji/continuous-modified-gradient-lean"
+keywords:
+  - Lean 4
+  - Mathlib
+  - formal verification
+  - differential equations
+  - Lyapunov stability
+  - gradient systems
+  - quantitative genetics
+preferred-citation:
+  type: article
+  title: "Stability of equilibria in quantitative genetic models based on modified-gradient systems"
+  authors:
+    - family-names: Ridenhour
+      given-names: Benjamin J.
+      affiliation: University of Idaho
+    - family-names: Ridenhour
+      given-names: Jerry R.
+  journal: "Journal of Biological Dynamics"
+  volume: 12
+  issue: 1
+  start: 39
+  end: 50
+  year: 2018
+  doi: 10.1080/17513758.2017.1400598
+  url: "https://doi.org/10.1080/17513758.2017.1400598"

@@ -1,0 +1,75 @@
+digraph ContinuousStability {
+  rankdir=TB; newrank=true; nodesep=0.25; ranksep=0.45; bgcolor="#ffffff"; pad=0.2;
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, margin="0.12,0.05", color="#7d848c", fillcolor="#eef0ec", fontcolor="#1d2126"];
+  edge [color="#7d848c", arrowsize=0.6];
+  subgraph cluster_Examples { label="Examples.lean"; labeljust=l; style=rounded; color="#d6d8d2"; fontname="Courier"; fontsize=11; fontcolor="#5d646d";
+    "isSolution_const" [label=<<FONT FACE="Courier">isSolution_const</FONT>>];
+    "not_asympStable_of_crit_accum" [label=<<FONT FACE="Courier">not_asympStable_of_crit_accum</FONT><BR/><FONT POINT-SIZE="9">Ex 2.2</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+    "Example21.stable" [label=<<FONT FACE="Courier">Example21.stable</FONT><BR/><FONT POINT-SIZE="9">Ex 2.1</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+    "Example21.not_eigenvalueCondition" [label=<<FONT FACE="Courier">Example21.not_eigenvalueCondition</FONT><BR/><FONT POINT-SIZE="9">Ex 2.1</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+    "Example21.not_asympStable" [label=<<FONT FACE="Courier">Example21.not_asympStable</FONT><BR/><FONT POINT-SIZE="9">Ex 2.1</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+  }
+  subgraph cluster_Basin { label="Basin.lean"; labeljust=l; style=rounded; color="#d6d8d2"; fontname="Courier"; fontsize=11; fontcolor="#5d646d";
+    "basin_invariant" [label=<<FONT FACE="Courier">basin_invariant</FONT>>];
+    "basin" [label=<<FONT FACE="Courier">basin</FONT><BR/><FONT POINT-SIZE="9">Thm 3.1</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+    "isOpen_Oc" [label=<<FONT FACE="Courier">isOpen_Oc</FONT><BR/><FONT POINT-SIZE="9">Thm 3.1 (O_c open)</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+    "isOpen_Ec" [label=<<FONT FACE="Courier">isOpen_Ec</FONT>>];
+    "mem_Ec" [label=<<FONT FACE="Courier">mem_Ec</FONT>>];
+    "basin_Ec" [label=<<FONT FACE="Courier">basin_Ec</FONT><BR/><FONT POINT-SIZE="9">Thm 3.1</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+  }
+  subgraph cluster_Stability { label="Stability.lean"; labeljust=l; style=rounded; color="#d6d8d2"; fontname="Courier"; fontsize=11; fontcolor="#5d646d";
+    "LocalHyp.continuousOn_f" [label=<<FONT FACE="Courier">LocalHyp.continuousOn_f</FONT>>];
+    "trap" [label=<<FONT FACE="Courier">trap</FONT>>];
+    "stable_on" [label=<<FONT FACE="Courier">stable_on</FONT><BR/><FONT POINT-SIZE="9">Thm 2.1(i)</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+    "stable" [label=<<FONT FACE="Courier">stable</FONT><BR/><FONT POINT-SIZE="9">Thm 2.1(i)</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+    "tendsto_of_weighted_ascent" [label=<<FONT FACE="Courier">tendsto_of_weighted_ascent</FONT>>];
+    "hasDerivWithinAt_integral" [label=<<FONT FACE="Courier">hasDerivWithinAt_integral</FONT>>];
+    "asympStable" [label=<<FONT FACE="Courier">asympStable</FONT><BR/><FONT POINT-SIZE="9">Thm 2.1(ii)</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+  }
+  subgraph cluster_Lyapunov { label="Lyapunov.lean"; labeljust=l; style=rounded; color="#d6d8d2"; fontname="Courier"; fontsize=11; fontcolor="#5d646d";
+    "trajectory_deriv" [label=<<FONT FACE="Courier">trajectory_deriv</FONT><BR/><FONT POINT-SIZE="9">(TD)</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+    "trajectory_deriv_ge" [label=<<FONT FACE="Courier">trajectory_deriv_ge</FONT>>];
+    "ascent" [label=<<FONT FACE="Courier">ascent</FONT><BR/><FONT POINT-SIZE="9">V Lyapunov</FONT>>, color="#8a5a12", fillcolor="#f6ead2", penwidth=1.6];
+    "ascent_weighted" [label=<<FONT FACE="Courier">ascent_weighted</FONT>>];
+  }
+  subgraph cluster_Basic { label="Basic.lean"; labeljust=l; style=rounded; color="#d6d8d2"; fontname="Courier"; fontsize=11; fontcolor="#5d646d";
+    "EigBound.psd" [label=<<FONT FACE="Courier">EigBound.psd</FONT>>];
+    "exists_pos_lower_bound" [label=<<FONT FACE="Courier">exists_pos_lower_bound</FONT>>];
+    "monotoneOn_of_deriv_nonneg'" [label=<<FONT FACE="Courier">monotoneOn_of_deriv_nonneg&#x27;</FONT>>];
+    "first_exit" [label=<<FONT FACE="Courier">first_exit</FONT>>];
+  }
+  "basin_invariant" -> "ascent";
+  "basin_invariant" -> "first_exit";
+  "basin" -> "basin_invariant";
+  "basin" -> "hasDerivWithinAt_integral";
+  "basin" -> "tendsto_of_weighted_ascent";
+  "basin" -> "trajectory_deriv";
+  "basin" -> "trajectory_deriv_ge";
+  "isOpen_Ec" -> "isOpen_Oc";
+  "basin_Ec" -> "basin";
+  "basin_Ec" -> "isOpen_Ec";
+  "basin_Ec" -> "mem_Ec";
+  "not_asympStable_of_crit_accum" -> "isSolution_const";
+  "Example21.stable" -> "stable";
+  "ascent" -> "EigBound.psd";
+  "ascent" -> "monotoneOn_of_deriv_nonneg'";
+  "ascent" -> "trajectory_deriv";
+  "ascent_weighted" -> "monotoneOn_of_deriv_nonneg'";
+  "ascent_weighted" -> "trajectory_deriv";
+  "ascent_weighted" -> "trajectory_deriv_ge";
+  "trap" -> "LocalHyp.continuousOn_f";
+  "trap" -> "ascent";
+  "trap" -> "exists_pos_lower_bound";
+  "trap" -> "first_exit";
+  "stable_on" -> "trap";
+  "stable" -> "stable_on";
+  "tendsto_of_weighted_ascent" -> "exists_pos_lower_bound";
+  "tendsto_of_weighted_ascent" -> "monotoneOn_of_deriv_nonneg'";
+  "asympStable" -> "LocalHyp.continuousOn_f";
+  "asympStable" -> "hasDerivWithinAt_integral";
+  "asympStable" -> "stable";
+  "asympStable" -> "tendsto_of_weighted_ascent";
+  "asympStable" -> "trajectory_deriv";
+  "asympStable" -> "trajectory_deriv_ge";
+  "asympStable" -> "trap";
+}
